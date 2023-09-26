@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.2/socket.io.js" integrity="sha512-VJ6+sp2E5rFQk05caiXXzQd1wBABpjEj1r5kMiLmGAAgwPItw1YpqsCCBtq8Yr1x6C49/mTpRdXtq8O2RcZhlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            padding: 10px 15px;
+            font-size: 32px;
+            background-color: rgb(0, 229, 255);
+            outline: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">
+        ON
+    </button>
+
+    <script>
+        const socket = io()
+        const btn = document.getElementById("btn")
+        btn.addEventListener("click",()=>{
+            if (btn.innerText=="ON") {
+                btn.innerText = "OFF"
+            }else{
+                btn.innerText = "ON"
+            }
+        })
+    </script>
+</body>
+</html>
